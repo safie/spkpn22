@@ -55,25 +55,25 @@ class KampungController extends Controller
 			$query->where('kam_nama_kampung','like','%'.$namakg.'%');
 		}
 		if (!empty($negerikg)){
-			$query->Where('kam_idnegeri','like','%'.$negerikg.'%');
+			$query->Where('kam_idnegeri','like',$negerikg);
 		}
 		if (!empty($daerahkg)){
-			$query->Where('kam_iddaerah','like','%'.$daerahkg.'%');
+			$query->Where('kam_iddaerah','like',$daerahkg);
 		}
 		if (!empty($mukimkg)){
-			$query->Where('kam_idmukim','like','%'.$mukimkg.'%');
+			$query->Where('kam_idmukim','like',$mukimkg);
 		}
 		if (!empty($kawalseliakg)){
-			$query->Where('kam_idkawal_selia','like','%'.$kawalseliakg.'%');
+			$query->Where('kam_idkawal_selia','like',$kawalseliakg);
 		}
 		if (!empty($penyelaraskg)){
-			$query->Where('kam_idagensi_penyelaras','like','%'.$penyelaraskg.'%');
+			$query->Where('kam_idagensi_penyelaras','like',$penyelaraskg);
 		}
 		if (!empty($parlimenkg)){
-			$query->Where('kam_idparlimen','like','%'.$parlimenkg.'%');
+			$query->Where('kam_idparlimen','like',$parlimenkg);
 		}
 		if (!empty($dunkg)){
-			$query->Where('kam_iddun','like','%'.$dunkg.'%');
+			$query->Where('kam_iddun','like',$dunkg);
         }
 
 		$query->orderBY('kam_created_date','DESC');

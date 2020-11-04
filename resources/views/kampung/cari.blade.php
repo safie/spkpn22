@@ -43,8 +43,9 @@
                                             <label class="input-group-text" for="negeri">Negeri</label>
                                         </div>
                                         <select class="custom-select js-select2" style="width: 80%" id="kam_idnegeri"name="kam_idnegeri" value="">
+                                            <option value="">-- Pilih Negeri --</option>
                                             @foreach($negeri as $negeri_all)
-                                                <option value="{{ $negeri_all->neg_idnegeri }}" selected="">
+                                                <option value="{{ $negeri_all->neg_idnegeri }}">
                                                     {{ $negeri_all->neg_nama_negeri }}
                                                 </option>
                                             @endforeach
@@ -78,8 +79,9 @@
                                             <label class="input-group-text" for="inputGroupSelect01">Agensi Kawal Selia</label>
                                         </div>
                                         <select class="custom-select js-select2" style="width: 70%" id="kam_idkawal_selia" name="kam_idkawal_selia" value="">
+                                            <option value="">-- Pilih Agensi Kawal Selia --</option>
                                             @foreach($agensikawalselia as $agensikawalselia_all)
-                                                <option value="{{ $agensikawalselia_all->kws_idkawal_selia }}" selected="">
+                                                <option value="{{ $agensikawalselia_all->kws_idkawal_selia }}">
                                                     {{ $agensikawalselia_all->kws_kawal_selia }}
                                                 </option>
                                             @endforeach
@@ -103,8 +105,9 @@
                                             <label class="input-group-text" for="inputGroupSelect01">Parlimen</label>
                                         </div>
                                         <select class="custom-select js-select2" style="width: 80%" id="kam_idparlimen" name="kam_idparlimen" value="">
+                                            <option value="">-- Pilih Parlimen --</option>
                                             @foreach($parlimen as $parlimen_all)
-                                                <option value="{{ $parlimen_all->par_kodparlimen }}" selected="">
+                                                <option value="{{ $parlimen_all->par_kodparlimen }}">
                                                     {{ $parlimen_all->par_kodparlimen }}-{{ $parlimen_all->par_parlimen }}
                                                 </option>
                                             @endforeach
