@@ -246,36 +246,231 @@ return [
             //'label_color' => 'success',
         ],
 
-        ['header' => 'PRETASI PENGISIAN'],
+        ['header' => 'STATUS PENGISIAN'],
         [
             'text'    => 'MODUL A',
-            'icon'    => 'fas fa-fw fa-book',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                ],
-            ],
+            'icon'    => 'fas fa-fw fa-id-badge',
+            'url'     => '/modul_a/index',
         ],
         [
             'text'    => 'MODUL B',
-            'icon'    => 'fas fa-fw fa-book',
+            'icon'    => 'fas fa-fw fa-monument',
+            'url'     => '#',
+        ],
+        [
+            'text'    => 'MODUL C',
+            'icon'    => 'fas fa-fw fa-map-marked-alt',
+            'url'     => '#',
+        ],
+        [
+            'text'    => 'MODUL D',
+            'icon'    => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Penduduk',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
+                    'text' => 'Umur',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Tahap Pendidikan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pendapatan Kasar',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pekerjaan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Golongan Khas',
+                    'url'  => '#',
                 ],
             ],
         ],
-
+        [
+            'text'    => 'MODUL E',
+            'icon'    => 'fas fa-fw fa-layer-group',
+            'submenu' => [
+                [
+                    'text' => 'Tanah',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Jenis Hak Milik',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Tanah Diusahakan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Tanah Terbiar',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'MODUL F',
+            'icon'    => 'fas fa-fw fa-industry',
+            'submenu' => [
+                [
+                    'text' => 'Kemudahan Perniagaan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pertanian',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Penternakan / Perikanan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Perniagaan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Premis Niaga',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Stesen Pam Minyak',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Koperasi',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'MODUL G',
+            'icon'    => 'fas fa-fw fa-car',
+            'submenu' => [
+                [
+                    'text' => 'Rumah',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Kenderaan',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'MODUL H',
+            'icon'    => 'fas fa-fw fa-faucet',
+            'submenu' => [
+                [
+                    'text' => 'Infrastruktur',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Bekalan Air',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Bekalan Elektrik',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Sistem Pembentungan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pusat Pendidikan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Capaian / Akses Liputan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Kemudahan Masyarakat',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Rumah / Pusat Jagaan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Sampah',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pengangkutan Awam',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'MODUL I',
+            'icon'    => 'fas fa-fw fa-people-carry',
+            'submenu' => [
+                [
+                    'text' => 'Penganjuran Aktiviti',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Wabak Penyakit',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Kualiti Alam Sekitar',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Isu & Masalah Sosial',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Kursus / Latihan',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Projek Ekonomi',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'MODUL J',
+            'icon'    => 'fas fa-fw fa-people-arrows',
+            'url'     => '#',
+        ],
+        [
+            'text'    => 'MODUL K',
+            'icon'    => 'fas fa-fw fa-user-tie',
+            'submenu' => [
+                [
+                    'text' => 'Individu',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Kampung',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Potensi',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'MODUL L',
+            'icon'    => 'fas fa-fw fa-exclamation-triangle',
+            'url'     => '#',
+        ],
+        [
+            'text'    => 'MODUL M',
+            'icon'    => 'fas fa-fw fa-chalkboard-teacher',
+            'url'     => '#',
+        ],
     ],
 
     /*

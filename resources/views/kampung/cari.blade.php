@@ -138,7 +138,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header border-0">
-                    <h3 class="card-title">Sebanyak {{ $kira_kg }} kampung telah dijumpai</h3>
+                    <h3 class="card-title">Hasil carian: <p class="d-inline p-1 bg-black text-white">{{ $kira_kg }} buah kampung</p></h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
@@ -149,9 +149,9 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Nama Kampung</th>
-                                <th>Agensi Penyelaras</th>
-                                <th>Negeri</th>
+                                <th>Kampung</th>
+                                <th colspan="2">Agensi Kawal Selia - Penyelaras</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -159,15 +159,17 @@
                             <tr>
                                 <td>{{ $carian->firstItem()+$index }}</td>
                                 <td>
-                                    <p>
-                                        {{ $kampung->kam_nama_kampung }}
-                                    </p>
-                                    <div class="d-inline p-2 bg-primary text-white">ID:{{ $kampung->kam_idkampung }}</div>
-                                    <div class="d-inline p-1 bg-dark text-white">{{ $kampung->neg_nama_negeri }}</div>
-                                    <div class="d-inline p-1 bg-success text-white">{{ $kampung->dae_nama_daerah }}</div>
-
-                                <td>{{ $kampung->kam_idkawal_selia }}</td>
-                                <td>{{ $kampung->dae_nama_daerah }}</td>
+                                    <div class="d-inline p-1 bg-primary text-white">{{ $kampung->kam_nama_kampung }}</div><br/>
+                                    <span class="badge badge-secondary">ID:{{ $kampung->kam_idkampung }}</span>
+                                    <span class="badge badge-secondary">{{ $kampung->neg_nama_negeri }}</span>
+                                    <span class="badge badge-secondary">{{ $kampung->dae_nama_daerah }}</span>
+                                    <span class="badge badge-secondary">{{ $kampung->muk_nama_mukim }}</span>
+                                <td>
+                                    <div class="d-inline p-1 bg-danger text-white">{{ $kampung->kawalSelia->kws_sktn_agensi }}</div>
+                                    <div class="d-inline p-1 bg-white text-black">{{ $kampung->kawalSelia->kws_kawal_selia }}</div><br/>
+                                    <span class="badge badge-secondary">{{ $kampung->agensi->lar_agensi_penyelaras }}</span>
+                                </td>
+                                <td class="text-center"><a class="btn btn-info" href="#" role="button"><i class="fas fa-info-circle"></i> profil</a></td>
                             </tr>
                         @endforeach
                         </tbody>

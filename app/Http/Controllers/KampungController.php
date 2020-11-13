@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\RefNegeri;
+use App\Models\RefKawalSelia;
+use App\Models\RefParlimen;
 use App\Models\Kampung;
 
 class KampungController extends Controller
@@ -13,7 +16,7 @@ class KampungController extends Controller
     {
         $this->middleware('auth');
     }
-    //
+
     public function index(){
 
         return view('kampung.index');
@@ -21,23 +24,32 @@ class KampungController extends Controller
 
     public function cari(Request $request){
 
-        $allkampung =DB::connection('mysql2')->table('t_kampung')->where('kam_idstatus_kampung','1')
-                        ->leftJoin('t_ref_negeri','t_kampung.kam_idnegeri','=','t_ref_negeri.neg_idnegeri')
-                        ->leftJoin('t_ref_daerah','t_kampung.kam_iddaerah','=','t_ref_daerah.dae_iddaerah')
-                        ->leftJoin('t_ref_mukim','t_kampung.kam_idmukim','=','t_ref_mukim.muk_idmukim')
-                        ->leftJoin('t_ref_kawal_selia','t_kampung.kam_idkawal_selia','=','t_ref_kawal_selia.kws_idkawal_selia')
-                        ->leftJoin('t_ref_agensi_penyelaras','t_kampung.kam_idagensi_penyelaras','=','t_ref_agensi_penyelaras.lar_idagensi_penyelaras')
-                        ->leftJoin('t_ref_parlimen','t_kampung.kam_idparlimen','=','t_ref_parlimen.par_kodparlimen')
-                        ->leftJoin('t_ref_dun','t_kampung.kam_iddun','=','t_ref_dun.dun_koddun');
+        // $allkampung =DB::connection('mysql2')->table('t_kampung')->where('kam_idstatus_kampung','1')
+        //                 ->leftJoin('t_ref_negeri','t_kampung.kam_idnegeri','=','t_ref_negeri.neg_idnegeri')
+        //                 ->leftJoin('t_ref_daerah','t_kampung.kam_iddaerah','=','t_ref_daerah.dae_iddaerah')
+        //                 ->leftJoin('t_ref_mukim','t_kampung.kam_idmukim','=','t_ref_mukim.muk_idmukim')
+        //                 ->leftJoin('t_ref_kawal_selia','t_kampung.kam_idkawal_selia','=','t_ref_kawal_selia.kws_idkawal_selia')
+        //                 ->leftJoin('t_ref_agensi_penyelaras','t_kampung.kam_idagensi_penyelaras','=','t_ref_agensi_penyelaras.lar_idagensi_penyelaras')
+        //                 ->leftJoin('t_ref_parlimen','t_kampung.kam_idparlimen','=','t_ref_parlimen.par_kodparlimen')
+        //                 ->leftJoin('t_ref_dun','t_kampung.kam_iddun','=','t_ref_dun.dun_koddun');
 
-        //dropdown negeri
-        $negeri = DB::connection('mysql2')->table('t_ref_negeri')->get();
-        //dropdown agensi kawal selia
-        $agensikawalselia = DB::connection('mysql2')->table('t_ref_kawal_selia')->get();
-        //dropdown parlimen
-        $parlimen = DB::connection('mysql2')->table('t_ref_parlimen')->orderBy('par_kodparlimen','ASC')->get();
+        $allkampung = Kampung::aktif()
+                        //->with('agensi')->with('kawalSelia')
+                        ->orderBy('kam_created_date','DESC');
 
-        //set input-text dgn variable
+        //--dropdown negeri--//
+        // $negeri = DB::connection('mysql2')->table('t_ref_negeri')->get();
+        $negeri = RefNegeri::all();
+
+        //--dropdown agensi kawal selia--//
+        // $agensikawalselia = DB::connection('mysql2')->table('t_ref_kawal_selia')->get();
+        $agensikawalselia = RefKawalSelia::all();
+
+        //--dropdown parlimen--//
+        // $parlimen = DB::connection('mysql2')->table('t_ref_parlimen')->orderBy('par_kodparlimen','ASC')->get();
+        $parlimen = RefParlimen::orderBy('par_kodparlimen','ASC')->get();
+
+        //--set input-text dgn variable--//
         $namakg = $request->input('kam_nama_kampung');
         $negerikg = $request->input('kam_idnegeri');
         $daerahkg = $request->input('kam_iddaerah');
@@ -46,11 +58,9 @@ class KampungController extends Controller
         $penyelaraskg = $request->input('kam_idagensi_penyelaras');
         $parlimenkg = $request->input('kam_idparlimen');
         $dunkg = $request->input('kam_iddun');
-
         $query = $allkampung;
 
-        //check ada input?
-
+        //--check ada input?--//
 		if (!empty($namakg)){
 			$query->where('kam_nama_kampung','like','%'.$namakg.'%');
 		}
@@ -76,11 +86,11 @@ class KampungController extends Controller
 			$query->Where('kam_iddun','like',$dunkg);
         }
 
-		$query->orderBY('kam_created_date','DESC');
+		//$query->orderBY('kam_created_date','DESC');
 		$carian = $query->paginate(10);
 		$kira_kg = $query->count();
 
-        //dd($request);
+        //dd($carian);
         // mengirim data pegawai ke view index
         return view('kampung.cari',compact('negeri','agensikawalselia','parlimen','carian','kira_kg'))->with('no',1);
 

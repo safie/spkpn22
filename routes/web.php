@@ -33,6 +33,8 @@ Route::get('/kampung/', [App\Http\Controllers\KampungController::class, 'index']
 
 Route::get('/kampung/cari', [App\Http\Controllers\KampungController::class, 'cari'])->name('kampung@cari');
 
+Route::get('/modul_a/index', [App\Http\Controllers\ModulAController::class, 'index'])->name('modula@index');
+
 // this route can return the state with the state id
 Route::get('daerahbyidnegeri/{id}', [App\Http\Controllers\KampungController::class, 'daerahbyidnegeri']);
 Route::get('mukimbyiddaerah/{id}', [App\Http\Controllers\KampungController::class, 'mukimbyiddaerah']);

@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RefAgensiPenyelaras extends Model
+class PenggunaKampung extends Model
 {
     use HasFactory;
 
     protected $connection = "mysql2";
-    protected $table = "t_ref_agensi_penyelaras";
-    protected $primaryKey = 'lar_idagensi_penyelaras';
-
+    protected $table = "t_pengguna_kampung";
+    protected $primaryKey = 'usk_idpengguna_kampung';
 }
