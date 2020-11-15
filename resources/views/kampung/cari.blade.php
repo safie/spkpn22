@@ -161,9 +161,9 @@
                                 <td>
                                     <div class="d-inline p-1 bg-primary text-white">{{ $kampung->kam_nama_kampung }}</div><br/>
                                     <span class="badge badge-secondary">ID:{{ $kampung->kam_idkampung }}</span>
-                                    <span class="badge badge-secondary">{{ $kampung->neg_nama_negeri }}</span>
-                                    <span class="badge badge-secondary">{{ $kampung->dae_nama_daerah }}</span>
-                                    <span class="badge badge-secondary">{{ $kampung->muk_nama_mukim }}</span>
+                                    <span class="badge badge-secondary">{{ $kampung->negeri->neg_nama_negeri }}</span>
+                                    <span class="badge badge-secondary">{{ $kampung->daerah->dae_nama_daerah }}</span>
+                                    <span class="badge badge-secondary">{{ $kampung->mukim->muk_nama_mukim }}</span>
                                 <td>
                                     <div class="d-inline p-1 bg-danger text-white">{{ $kampung->kawalSelia->kws_sktn_agensi }}</div>
                                     <div class="d-inline p-1 bg-white text-black">{{ $kampung->kawalSelia->kws_kawal_selia }}</div><br/>
@@ -185,9 +185,9 @@
     </div>
 @stop
 
-    @section('css')
+    {{-- @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-    @stop
+    @stop --}}
 
         @section('js')
         <script>

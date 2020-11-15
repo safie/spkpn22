@@ -45,6 +45,10 @@ class Kampung extends Model
     {
         return $this->hasOne('App\Models\RefDun', 'dun_koddun', 'kam_iddun');
     }
+    public function penggunakg()
+    {
+        return $this->hasMany('App\Models\PenggunaKampung', 'usk_idkampung', 'kam_idkampung');
+    }
 }
 
 

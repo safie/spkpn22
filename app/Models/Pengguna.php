@@ -12,4 +12,10 @@ class Pengguna extends Model
     protected $connection = "mysql2";
     protected $table = "t_pengguna";
     protected $primaryKey = 'usr_id';
+
+    public function penggunaKampung()
+    {
+        return $this->hasOne('App\Models\PenggunaKampung', 'usk_id', 'usr_id');
+    }
+
 }

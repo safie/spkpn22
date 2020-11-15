@@ -28,11 +28,8 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/kampung/', [App\Http\Controllers\KampungController::class, 'index'])->name('kampung@index');
-
 Route::get('/kampung/cari', [App\Http\Controllers\KampungController::class, 'cari'])->name('kampung@cari');
-
 Route::get('/modul_a/index', [App\Http\Controllers\ModulAController::class, 'index'])->name('modula@index');
 
 // this route can return the state with the state id
