@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\RefNegeri;
 use App\Models\RefKawalSelia;
 use App\Models\RefParlimen;
 use App\Models\Kampung;
 use App\Models\PenggunaKampung;
-
+/*  */
 
 class ModulAController extends Controller
 {
@@ -35,7 +35,8 @@ class ModulAController extends Controller
                                             'kam_idkawal_selia','kam_idagensi_penyelaras');
         $kampung = Kampung::aktif();
 
-        //--set input-text dgn variable--//
+
+        //--check ada input?--//
         $negerikg = $request->input('kam_idnegeri');
         $daerahkg = $request->input('kam_iddaerah');
         $mukimkg = $request->input('kam_idmukim');
@@ -44,35 +45,59 @@ class ModulAController extends Controller
         $parlimenkg = $request->input('kam_idparlimen');
         $dunkg = $request->input('kam_iddun');
 
-        //--check ada input?--//
-		if (!empty($negerikg)){
+        //--set input-text dgn variable--//
+
+        if (!empty($negerikg)){
             $kampung->Where('kam_idnegeri','=',$negerikg);
             $pengguna->where('kam_idnegeri','=',$negerikg);
         }
-		if (!empty($daerahkg)){
+        if (!empty($daerahkg)){
             $kampung->Where('kam_iddaerah','=',$daerahkg);
             $pengguna->Where('kam_iddaerah','=',$daerahkg);
-		}
-		if (!empty($mukimkg)){
+        }
+        if (!empty($mukimkg)){
             $kampung->Where('kam_idmukim','=',$mukimkg);
             $pengguna->Where('kam_idmukim','=',$mukimkg);
-		}
-		if (!empty($kawalseliakg)){
+        }
+        if (!empty($kawalseliakg)){
             $kampung->Where('kam_idkawal_selia','=',$kawalseliakg);
             $pengguna->Where('kam_idkawal_selia','=',$kawalseliakg);
-		}
-		if (!empty($penyelaraskg)){
+        }
+        if (!empty($penyelaraskg)){
             $kampung->Where('kam_idagensi_penyelaras','=',$penyelaraskg);
             $pengguna->Where('kam_idagensi_penyelaras','=',$penyelaraskg);
         }
 
-        $kirakg = $kampung->count();
+        $result_kampung = $kampung;
+        $result_pengguna = $pengguna;
 
-        $kiraketuakg = $pengguna->where('usk_idtahap_pengguna','=','KETUA_KOMUNITI')->count();
+        $kirakg = $result_kampung->count();
 
-        $kirapengerak = $pengguna->where('usk_idtahap_pengguna','=','PENGGERAK')->count();
+        $kiraketuakg = $result_pengguna->KetuaKg()->count();
+        $kirapengerak = $result_pengguna->Pengerak()->count();
+        $kirapenghulu = $result_pengguna->Penghulu()->count();
 
-        $kirapenghulu = $pengguna->where('usk_idtahap_pengguna','=','PENGHULU_MUKIM')->count();
+        // $kiraketuakg = $result_pengguna->where('usk_idtahap_pengguna','=','KETUA_KOMUNITI')->count();
+        // $kirapengerak = $result_pengguna->where('usk_idtahap_pengguna','=','PENGGERAK')->count();
+        // $kirapenghulu = $result_pengguna->where('usk_idtahap_pengguna','=','PENGHULU_MUKIM')->count();
+
+        // $tahap_pengguna = ['PENGGERAK','PENGHULU_MUKIM','KETUA_KOMUNITI'];
+        // for ($i=0; $i < count($tahap_pengguna); $i++) {
+        //     $query[$i] = $pengguna->where('usk_idtahap_pengguna','=',$tahap_pengguna[$i])->count();
+        // }
+
+        // $kirapengerak = $query[0];
+        // $kirapenghulu = $query[1];
+        // $kiraketuakg = $query[2];
+
+        // function kiraPengguna($query,$tahap_pengguna) {
+        //     return $query->where('usk_idtahap_pengguna','=',$tahap_pengguna)->count();
+        // };
+
+
+        // $kirapengerak = kiraPengguna($result_pengguna, 'PENGGERAK');
+        // $kirapenghulu = kiraPengguna($result_pengguna, 'PENGHULU_MUKIM');
+        // $kiraketuakg = kiraPengguna($result_pengguna, 'KETUA_KOMUNITI');
 
         //dd($query1);
         return view('modul_a.index', compact('negeri','agensikawalselia','kirakg','kirapenghulu','kiraketuakg','kirapengerak'));

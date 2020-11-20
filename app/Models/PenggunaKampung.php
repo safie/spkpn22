@@ -17,4 +17,16 @@ class PenggunaKampung extends Model
     {
         return $this->hasOne('App\Models\Kampung', 'kam_idkampung', 'usk_idkampung');
     }
+    public function scopePengerak($query)
+    {
+        return $query->where('usk_idtahap_pengguna', '=', 'PENGERAK');
+    }
+    public function scopeKetuaKg($query)
+    {
+        return $query->where('usk_idtahap_pengguna', '=', 'KETUA_KOMUNITI');
+    }
+    public function scopePenghulu($query)
+    {
+        return $query->where('usk_idtahap_pengguna', '=', 'PENGHULU');
+    }
 }

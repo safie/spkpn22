@@ -255,7 +255,7 @@ return [
         [
             'text'    => 'MODUL B',
             'icon'    => 'fas fa-fw fa-monument',
-            'url'     => '#',
+            'url'     => '/modul_b/index',
         ],
         [
             'text'    => 'MODUL C',
