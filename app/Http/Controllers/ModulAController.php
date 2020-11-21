@@ -35,6 +35,12 @@ class ModulAController extends Controller
                                             'kam_idkawal_selia','kam_idagensi_penyelaras');
         $kampung = Kampung::aktif();
 
+        $JumKetuaKg = PenggunaKampung::leftJoin('t_kampung','t_kampung.kam_idkampung','=','t_pengguna_kampung.usk_idkampung')
+                        ->where('t_pengguna_kampung.usk_idtahap_pengguna','KETUA_KOMUNITI');
+        $JumPenggerak = PenggunaKampung::leftJoin('t_kampung','t_kampung.kam_idkampung','=','t_pengguna_kampung.usk_idkampung')
+                        ->where('t_pengguna_kampung.usk_idtahap_pengguna','PENGGERAK');
+        $JumPenghulu = PenggunaKampung::leftJoin('t_kampung','t_kampung.kam_idkampung','=','t_pengguna_kampung.usk_idkampung')
+                        ->where('t_pengguna_kampung.usk_idtahap_pengguna','PENGHULU_MUKIM');
 
         //--check ada input?--//
         $negerikg = $request->input('kam_idnegeri');
@@ -50,22 +56,37 @@ class ModulAController extends Controller
         if (!empty($negerikg)){
             $kampung->Where('kam_idnegeri','=',$negerikg);
             $pengguna->where('kam_idnegeri','=',$negerikg);
+            $JumKetuaKg->where('t_kampung.kam_idnegeri','=',$negerikg);
+            $JumPenggerak->where('t_kampung.kam_idnegeri','=',$negerikg);
+            $JumPenghulu->where('t_kampung.kam_idnegeri','=',$negerikg);
         }
         if (!empty($daerahkg)){
             $kampung->Where('kam_iddaerah','=',$daerahkg);
             $pengguna->Where('kam_iddaerah','=',$daerahkg);
+            $JumKetuaKg->where('t_kampung.kam_iddaerah','=',$daerahkg);
+            $JumPenggerak->where('t_kampung.kam_iddaerah','=',$daerahkg);
+            $JumPenghulu->where('t_kampung.kam_iddaerah','=',$daerahkg);
         }
         if (!empty($mukimkg)){
             $kampung->Where('kam_idmukim','=',$mukimkg);
             $pengguna->Where('kam_idmukim','=',$mukimkg);
+            $JumKetuaKg->where('t_kampung.kam_idmukim','=',$mukimkg);
+            $JumPenggerak->where('t_kampung.kam_idmukim','=',$mukimkg);
+            $JumPenghulu->where('t_kampung.kam_idmukim','=',$mukimkg);
         }
         if (!empty($kawalseliakg)){
             $kampung->Where('kam_idkawal_selia','=',$kawalseliakg);
             $pengguna->Where('kam_idkawal_selia','=',$kawalseliakg);
+            $JumKetuaKg->where('t_kampung.kam_idkawal_selia','=',$kawalseliakg);
+            $JumPenggerak->where('t_kampung.kam_idkawal_selia','=',$kawalseliakg);
+            $JumPenghulu->where('t_kampung.kam_idkawal_selia','=',$kawalseliakg);
         }
         if (!empty($penyelaraskg)){
             $kampung->Where('kam_idagensi_penyelaras','=',$penyelaraskg);
             $pengguna->Where('kam_idagensi_penyelaras','=',$penyelaraskg);
+            $JumKetuaKg->where('t_kampung.kam_idagensi_penyelaras','=',$penyelaraskg);
+            $JumPenggerak->where('t_kampung.kam_idagensi_penyelaras','=',$penyelaraskg);
+            $JumPenghulu->where('t_kampung.kam_idagensi_penyelaras','=',$penyelaraskg);
         }
 
         $result_kampung = $kampung;
@@ -73,9 +94,9 @@ class ModulAController extends Controller
 
         $kirakg = $result_kampung->count();
 
-        $kiraketuakg = $result_pengguna->KetuaKg()->count();
-        $kirapengerak = $result_pengguna->Pengerak()->count();
-        $kirapenghulu = $result_pengguna->Penghulu()->count();
+        $kiraketuakg = $JumKetuaKg->count();
+        $kirapengerak = $JumPenggerak->count();
+        $kirapenghulu = $JumPenghulu->count();
 
         // $kiraketuakg = $result_pengguna->where('usk_idtahap_pengguna','=','KETUA_KOMUNITI')->count();
         // $kirapengerak = $result_pengguna->where('usk_idtahap_pengguna','=','PENGGERAK')->count();
