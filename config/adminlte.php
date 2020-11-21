@@ -320,31 +320,31 @@ return [
             'submenu' => [
                 [
                     'text' => 'Kemudahan Perniagaan',
-                    'url'  => '#',
+                    'url'  => '/modul_f/kemudahanniaga',
                 ],
                 [
                     'text' => 'Pertanian',
-                    'url'  => '#',
+                    'url'  => '/modul_f/pertanian',
                 ],
                 [
                     'text' => 'Penternakan / Perikanan',
-                    'url'  => '#',
+                    'url'  => '/modul_f/ternakperikanan',
                 ],
                 [
                     'text' => 'Perniagaan',
-                    'url'  => '#',
+                    'url'  => '/modul_f/perniagaan',
                 ],
                 [
                     'text' => 'Premis Niaga',
-                    'url'  => '#',
+                    'url'  => '/modul_f/premisniaga',
                 ],
                 [
                     'text' => 'Stesen Pam Minyak',
-                    'url'  => '#',
+                    'url'  => '/modul_f/pamminyak',
                 ],
                 [
                     'text' => 'Koperasi',
-                    'url'  => '#',
+                    'url'  => '/modul_f/koperasi',
                 ],
             ],
         ],

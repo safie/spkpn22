@@ -44,6 +44,13 @@ Route::get('/modul_e/tanah', [App\Http\Controllers\ModulEController::class, 'tan
 Route::get('/modul_e/hakmilik', [App\Http\Controllers\ModulEController::class, 'hakMilik'])->name('module@hakmilk');
 Route::get('/modul_e/tanahterbiar', [App\Http\Controllers\ModulEController::class, 'tanahTerbiar'])->name('module@tanahterbiar');
 Route::get('/modul_e/tanahusaha', [App\Http\Controllers\ModulEController::class, 'tanahDiusaha'])->name('module@tanahdiusaha');
+Route::get('/modul_f/kemudahanniaga', [App\Http\Controllers\ModulFController::class, 'kemudahanPerniagaan'])->name('modulf@kemudahanperniagaan');
+Route::get('/modul_f/pertanian', [App\Http\Controllers\ModulFController::class, 'pertanian'])->name('modulf@pertanian');
+Route::get('/modul_f/ternakperikanan', [App\Http\Controllers\ModulFController::class, 'ternakPerikanan'])->name('module@ternakperikanan');
+Route::get('/modul_f/perniagaan', [App\Http\Controllers\ModulFController::class, 'perniagaan'])->name('module@perniagaan');
+Route::get('/modul_f/premisniaga', [App\Http\Controllers\ModulFController::class, 'premisNiaga'])->name('module@premisniaga');
+Route::get('/modul_f/pamminyak', [App\Http\Controllers\ModulFController::class, 'pamMinyak'])->name('module@pamminyak');
+Route::get('/modul_f/koperasi', [App\Http\Controllers\ModulFController::class, 'koperasi'])->name('module@koperasi');
 
 // this route can return the state with the state id
 Route::get('daerahbyidnegeri/{id}', [App\Http\Controllers\KampungController::class, 'daerahbyidnegeri']);
