@@ -260,7 +260,7 @@ return [
         [
             'text'    => 'MODUL C',
             'icon'    => 'fas fa-fw fa-map-marked-alt',
-            'url'     => '#',
+            'url'     => '/modul_c/index',
         ],
         [
             'text'    => 'MODUL D',
