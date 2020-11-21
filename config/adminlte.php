@@ -268,27 +268,27 @@ return [
             'submenu' => [
                 [
                     'text' => 'Penduduk',
-                    'url'  => '#',
+                    'url'  => '/modul_d/penduduk',
                 ],
                 [
                     'text' => 'Umur',
-                    'url'  => '#',
+                    'url'  => '/modul_d/umur',
                 ],
                 [
                     'text' => 'Tahap Pendidikan',
-                    'url'  => '#',
+                    'url'  => '/modul_d/pendidikan',
                 ],
                 [
                     'text' => 'Pendapatan Kasar',
-                    'url'  => '#',
+                    'url'  => '/modul_d/pendapatan',
                 ],
                 [
                     'text' => 'Pekerjaan',
-                    'url'  => '#',
+                    'url'  => '/modul_d/pekerjaan',
                 ],
                 [
                     'text' => 'Golongan Khas',
-                    'url'  => '#',
+                    'url'  => '/modul_d/golongankhas',
                 ],
             ],
         ],
@@ -298,19 +298,19 @@ return [
             'submenu' => [
                 [
                     'text' => 'Tanah',
-                    'url'  => '#',
+                    'url'  => '/modul_e/tanah',
                 ],
                 [
                     'text' => 'Jenis Hak Milik',
-                    'url'  => '#',
+                    'url'  => '/modul_e/hakmilik',
                 ],
                 [
                     'text' => 'Tanah Diusahakan',
-                    'url'  => '#',
+                    'url'  => '/modul_e/tanahusaha',
                 ],
                 [
                     'text' => 'Tanah Terbiar',
-                    'url'  => '#',
+                    'url'  => '/modul_e/tanahterbiar',
                 ],
             ],
         ],

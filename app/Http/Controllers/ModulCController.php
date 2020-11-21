@@ -31,12 +31,12 @@ class ModulCController extends Controller
         $totalKampung = Kampung::count();
         $listkg_belumisi = DB::connection('mysql2')->table('t_kampung')->where('kam_idstatus_kampung','1')
         ->leftJoin('t_c_konsep_susun_atur','t_kampung.kam_idkampung','=','t_c_konsep_susun_atur.ksa_idkampung')
-        ->select('t_kampung.kam_idkampung as id','t_kampung.kam_nama_kampung as kampung')
+        ->select('t_kampung.kam_idkampung as id','t_kampung.kam_nama_kampung as kampung')->distinct('t_kampung.kam_idkampung')
         ->where('t_c_konsep_susun_atur.ksa_idkampung','=', NULL);
 
         $listkg_isi = DB::connection('mysql2')->table('t_kampung')->where('kam_idstatus_kampung','1')
         ->leftJoin('t_c_konsep_susun_atur','t_kampung.kam_idkampung','=','t_c_konsep_susun_atur.ksa_idkampung')
-        ->select('t_kampung.kam_idkampung as id','t_kampung.kam_nama_kampung as kampung')
+        ->select('t_kampung.kam_idkampung as id','t_kampung.kam_nama_kampung as kampung')->distinct('t_kampung.kam_idkampung')
         ->where('t_c_konsep_susun_atur.ksa_idkampung','!=', NULL);
 
         //--check ada input?--//

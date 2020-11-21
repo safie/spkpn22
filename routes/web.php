@@ -34,6 +34,12 @@ Route::get('/kampung/cari', [App\Http\Controllers\KampungController::class, 'car
 Route::get('/modul_a/index', [App\Http\Controllers\ModulAController::class, 'index'])->name('modula@index');
 Route::get('/modul_b/index', [App\Http\Controllers\ModulBController::class, 'index'])->name('modulb@index');
 Route::get('/modul_c/index', [App\Http\Controllers\ModulCController::class, 'index'])->name('modulc@index');
+Route::get('/modul_d/penduduk', [App\Http\Controllers\ModulDController::class, 'penduduk'])->name('moduld@penduduk');
+Route::get('/modul_d/umur', [App\Http\Controllers\ModulDController::class, 'umur'])->name('moduld@umur');
+Route::get('/modul_d/pendidikan', [App\Http\Controllers\ModulDController::class, 'pendidikan'])->name('moduld@pendidikan');
+Route::get('/modul_d/pendapatan', [App\Http\Controllers\ModulDController::class, 'pendapatan'])->name('moduld@pendapatan');
+Route::get('/modul_d/pekerjaan', [App\Http\Controllers\ModulDController::class, 'pekerjaan'])->name('moduld@pekerjaan');
+Route::get('/modul_d/golongankhas', [App\Http\Controllers\ModulDController::class, 'golongankhas'])->name('moduld@golongankhas');
 
 // this route can return the state with the state id
 Route::get('daerahbyidnegeri/{id}', [App\Http\Controllers\KampungController::class, 'daerahbyidnegeri']);
