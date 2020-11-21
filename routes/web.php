@@ -40,6 +40,10 @@ Route::get('/modul_d/pendidikan', [App\Http\Controllers\ModulDController::class,
 Route::get('/modul_d/pendapatan', [App\Http\Controllers\ModulDController::class, 'pendapatan'])->name('moduld@pendapatan');
 Route::get('/modul_d/pekerjaan', [App\Http\Controllers\ModulDController::class, 'pekerjaan'])->name('moduld@pekerjaan');
 Route::get('/modul_d/golongankhas', [App\Http\Controllers\ModulDController::class, 'golongankhas'])->name('moduld@golongankhas');
+Route::get('/modul_e/tanah', [App\Http\Controllers\ModulEController::class, 'tanah'])->name('module@tanah');
+Route::get('/modul_e/hakmilik', [App\Http\Controllers\ModulEController::class, 'hakMilik'])->name('module@hakmilk');
+Route::get('/modul_e/tanahterbiar', [App\Http\Controllers\ModulEController::class, 'tanahTerbiar'])->name('module@tanahterbiar');
+Route::get('/modul_e/tanahusaha', [App\Http\Controllers\ModulEController::class, 'tanahDiusaha'])->name('module@tanahdiusaha');
 
 // this route can return the state with the state id
 Route::get('daerahbyidnegeri/{id}', [App\Http\Controllers\KampungController::class, 'daerahbyidnegeri']);
