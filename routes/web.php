@@ -15,18 +15,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
-});
-
-Route::get('/test', function () {
-    return view('test');
+    return view('auth.login');
 });
 
 Auth::routes();
-
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/kampung/', [App\Http\Controllers\KampungController::class, 'index'])->name('kampung@index');
