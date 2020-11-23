@@ -50,11 +50,12 @@ class HomeController extends Controller
         //1-Dapatkan jumlah kg mengikut negeri
         $negerikg = DB::connection('mysql2')->table('t_kampung')->where('kam_idstatus_kampung','1')
                     ->join('t_ref_negeri','t_kampung.kam_idnegeri','=','t_ref_negeri.neg_idnegeri')
-                    ->select('t_ref_negeri.neg_sktn_negeri as negeri', DB::raw('count(*) as jumlah'))
+                    ->select('t_ref_negeri.neg_idnegeri', 't_ref_negeri.neg_sktn_negeri as negeri', DB::raw('count(*) as jumlah'))
                     ->groupBy('t_ref_negeri.neg_idnegeri')
+                    ->orderBy('t_ref_negeri.neg_idnegeri','ASC')
                     ->pluck('jumlah','negeri')->all();
 
-        $negerikg_list = DB::connection('mysql2')->table('t_ref_negeri')->where('neg_id','!=','17')->get();
+        $negerikg_list = DB::connection('mysql2')->table('t_ref_negeri')->orderBy('neg_id','ASC')->get();
         $kawalseliakg_list = DB::connection('mysql2')->table('t_ref_kawal_selia')->get();
         $penyelaraskg_list = DB::connection('mysql2')->table('t_ref_agensi_penyelaras')
                             ->leftJoin('t_ref_kawal_selia','t_ref_agensi_penyelaras.lar_idkawal_selia','=','t_ref_kawal_selia.kws_idkawal_selia')
