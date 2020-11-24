@@ -7,7 +7,9 @@
 @section('title', 'SPKPN | Modul D')
 
 @section('content_header')
-<h1>MODUL D : Demografi (Penduduk)</h1>
+<h1><div class="d-inline-flex p-1 bg-blue text-white">MODUL D : DEMOGRAFI</div></h1>
+<h3><div class="d-inline-flex p-1 bg-black text-white">Penduduk</div></h3>
+
 @stop
 
 @section('content')

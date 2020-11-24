@@ -7,7 +7,9 @@
 @section('title', 'SPKPN | Modul F')
 
 @section('content_header')
-<h1>MODUL F : Kegiatan Ekonomi (Penternakan dan Perikanan)</h1>
+<h1><div class="d-inline-flex p-1 bg-blue text-white">MODUL F : KEGIATAN EKONOMI</div></h1>
+<h3><div class="d-inline-flex p-1 bg-black text-white">Penternakan dan Perikanan</div></h3>
+
 @stop
 
 @section('content')

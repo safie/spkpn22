@@ -414,34 +414,34 @@ return [
             'submenu' => [
                 [
                     'text' => 'Penganjuran Aktiviti',
-                    'url'  => '#',
+                    'url'  => '/modul_i/aktiviti',
                 ],
                 [
                     'text' => 'Wabak Penyakit',
-                    'url'  => '#',
+                    'url'  => '/modul_i/penyakit',
                 ],
                 [
                     'text' => 'Kualiti Alam Sekitar',
-                    'url'  => '#',
+                    'url'  => '/modul_i/alam',
                 ],
                 [
                     'text' => 'Isu & Masalah Sosial',
-                    'url'  => '#',
+                    'url'  => '/modul_i/sosial',
                 ],
                 [
                     'text' => 'Kursus / Latihan',
-                    'url'  => '#',
+                    'url'  => '/modul_i/kursus',
                 ],
                 [
                     'text' => 'Projek Ekonomi',
-                    'url'  => '#',
+                    'url'  => '/modul_i/projek',
                 ],
             ],
         ],
         [
             'text'    => 'MODUL J',
             'icon'    => 'fas fa-fw fa-people-arrows',
-            'url'     => '#',
+            'url'     => '/modul_j/organisasi',
         ],
         [
             'text'    => 'MODUL K',
@@ -449,27 +449,27 @@ return [
             'submenu' => [
                 [
                     'text' => 'Individu',
-                    'url'  => '#',
+                    'url'  => '/modul_k/individu',
                 ],
                 [
                     'text' => 'Kampung',
-                    'url'  => '#',
+                    'url'  => '/modul_k/kampung',
                 ],
                 [
                     'text' => 'Potensi',
-                    'url'  => '#',
+                    'url'  => '/modul_k/potensi',
                 ],
             ],
         ],
         [
             'text'    => 'MODUL L',
             'icon'    => 'fas fa-fw fa-exclamation-triangle',
-            'url'     => '#',
+            'url'     => '/modul_l/isu',
         ],
         [
             'text'    => 'MODUL M',
             'icon'    => 'fas fa-fw fa-chalkboard-teacher',
-            'url'     => '#',
+            'url'     => '/modul_m/kursus',
         ],
     ],
 

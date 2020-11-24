@@ -7,7 +7,9 @@
 @section('title', 'SPKPN | Modul E')
 
 @section('content_header')
-<h1>MODUL E : Kegunaan Tanah (Keluasan Tanah)</h1>
+<h1><div class="d-inline-flex p-1 bg-blue text-white">MODUL E : KEGUNAAN TANAH</div></h1>
+<h3><div class="d-inline-flex p-1 bg-black text-white">Keluasan Tanah</div></h3>
+
 @stop
 
 @section('content')

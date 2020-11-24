@@ -7,7 +7,9 @@
 @section('title', 'SPKPN | Modul C')
 
 @section('content_header')
-<h1>MODUL C : Konsep Susun Atur</h1>
+<h1><div class="d-inline p-1 bg-blue text-white">MODUL C : KONSEP SUSUN ATUR</div></h1>
+{{-- <div class="d-inline p-1 bg-black text-white">  </div> --}}
+
 @stop
 
 @section('content')

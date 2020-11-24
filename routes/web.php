@@ -54,10 +54,27 @@ Route::get('/modul_h/aksesliputan', [App\Http\Controllers\ModulHController::clas
 Route::get('/modul_h/masyarakat', [App\Http\Controllers\ModulHController::class, 'kemudahanMasyarakat'])->name('modulh@masyarakat');
 Route::get('/modul_h/pusatjagaan', [App\Http\Controllers\ModulHController::class, 'pusatJagaan'])->name('modulh@pusatjagaan');
 Route::get('/modul_h/sampah', [App\Http\Controllers\ModulHController::class, 'sampah'])->name('modulh@sampah');
-Route::get('/modul_h/penangkutanawam', [App\Http\Controllers\ModulHController::class, 'penangkutanAwam'])->name('modulh@penangkutanawam');
+Route::get('/modul_h/pengangkutanawam', [App\Http\Controllers\ModulHController::class, 'pengangkutanAwam'])->name('modulh@penangkutanawam');
+Route::get('/modul_i/aktiviti', [App\Http\Controllers\ModulIController::class, 'aktiviti'])->name('moduli@aktiviti');
+Route::get('/modul_i/kursus', [App\Http\Controllers\ModulIController::class, 'kursus'])->name('moduli@kursus');
+Route::get('/modul_i/alam', [App\Http\Controllers\ModulIController::class, 'alamSekitar'])->name('moduli@alamsekitar');
+Route::get('/modul_i/penyakit', [App\Http\Controllers\ModulIController::class, 'penyakit'])->name('moduli@penyakit');
+Route::get('/modul_i/projek', [App\Http\Controllers\ModulIController::class, 'projekEkonomi'])->name('moduli@projekekonomi');
+Route::get('/modul_i/sosial', [App\Http\Controllers\ModulIController::class, 'masalahSosial'])->name('moduli@masalahsosial');
+Route::get('/modul_j/organisasi', [App\Http\Controllers\ModulJController::class, 'organisasi'])->name('modulj@organisasi');
+Route::get('/modul_k/individu', [App\Http\Controllers\ModulKController::class, 'individu'])->name('modulk@individu');
+Route::get('/modul_k/kampung', [App\Http\Controllers\ModulKController::class, 'kampung'])->name('modulk@kampung');
+Route::get('/modul_k/potensi', [App\Http\Controllers\ModulKController::class, 'potensi'])->name('modulk@potensi');
+Route::get('/modul_l/isu', [App\Http\Controllers\ModulLController::class, 'isu'])->name('modull@isu');
+Route::get('/modul_m/kursus', [App\Http\Controllers\ModulMController::class, 'kursus'])->name('modulm@kursus');
 
 
-// this route can return the state with the state id
+
+
+
+
+
+// route untuk js dapatkan data json
 Route::get('daerahbyidnegeri/{id}', [App\Http\Controllers\KampungController::class, 'daerahbyidnegeri']);
 Route::get('mukimbyiddaerah/{id}', [App\Http\Controllers\KampungController::class, 'mukimbyiddaerah']);
 Route::get('agensikawalselia/{id}', [App\Http\Controllers\KampungController::class, 'agensipenyelaras']);

@@ -4,12 +4,11 @@
 @section('plugins.Select2', true)
 @section('plugins.Datatables', true)
 
-@section('title', 'SPKPN | Modul D')
+@section('title', 'SPKPN | Modul I')
 
 @section('content_header')
-<h1><div class="d-inline-flex p-1 bg-blue text-white">MODUL D : DEMOGRAFI</div></h1>
-<h3><div class="d-inline-flex p-1 bg-black text-white">Pekerjaan</div></h3>
-
+<h1><div class="d-inline p-1 bg-blue text-white">MODUL I : KESEJAHTERAAN KAMPUNG</div></h1>
+<h3><div class="d-inline p-1 bg-black text-white">Penganjuran Aktiviti</div></h3>
 @stop
 
 @section('content')
