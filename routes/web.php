@@ -38,11 +38,24 @@ Route::get('/modul_e/tanahterbiar', [App\Http\Controllers\ModulEController::clas
 Route::get('/modul_e/tanahusaha', [App\Http\Controllers\ModulEController::class, 'tanahDiusaha'])->name('module@tanahdiusaha');
 Route::get('/modul_f/kemudahanniaga', [App\Http\Controllers\ModulFController::class, 'kemudahanPerniagaan'])->name('modulf@kemudahanperniagaan');
 Route::get('/modul_f/pertanian', [App\Http\Controllers\ModulFController::class, 'pertanian'])->name('modulf@pertanian');
-Route::get('/modul_f/ternakperikanan', [App\Http\Controllers\ModulFController::class, 'ternakPerikanan'])->name('module@ternakperikanan');
-Route::get('/modul_f/perniagaan', [App\Http\Controllers\ModulFController::class, 'perniagaan'])->name('module@perniagaan');
-Route::get('/modul_f/premisniaga', [App\Http\Controllers\ModulFController::class, 'premisNiaga'])->name('module@premisniaga');
-Route::get('/modul_f/pamminyak', [App\Http\Controllers\ModulFController::class, 'pamMinyak'])->name('module@pamminyak');
-Route::get('/modul_f/koperasi', [App\Http\Controllers\ModulFController::class, 'koperasi'])->name('module@koperasi');
+Route::get('/modul_f/ternakperikanan', [App\Http\Controllers\ModulFController::class, 'ternakPerikanan'])->name('modulf@ternakperikanan');
+Route::get('/modul_f/perniagaan', [App\Http\Controllers\ModulFController::class, 'perniagaan'])->name('modulf@perniagaan');
+Route::get('/modul_f/premisniaga', [App\Http\Controllers\ModulFController::class, 'premisNiaga'])->name('modulf@premisniaga');
+Route::get('/modul_f/pamminyak', [App\Http\Controllers\ModulFController::class, 'pamMinyak'])->name('modulf@pamminyak');
+Route::get('/modul_f/koperasi', [App\Http\Controllers\ModulFController::class, 'koperasi'])->name('modulf@koperasi');
+Route::get('/modul_g/rumah', [App\Http\Controllers\ModulGController::class, 'rumah'])->name('modulg@rumah');
+Route::get('/modul_g/kenderaan', [App\Http\Controllers\ModulGController::class, 'kenderaan'])->name('modulg@kenderaan');
+Route::get('/modul_h/infrastruktur', [App\Http\Controllers\ModulHController::class, 'infrastruktur'])->name('modulh@infrastruktur');
+Route::get('/modul_h/air', [App\Http\Controllers\ModulHController::class, 'air'])->name('modulh@air');
+Route::get('/modul_h/elektrik', [App\Http\Controllers\ModulHController::class, 'elektrik'])->name('modulh@elektrik');
+Route::get('/modul_h/pembentungan', [App\Http\Controllers\ModulHController::class, 'pembentungan'])->name('modulh@pembentungan');
+Route::get('/modul_h/pusatpendidikan', [App\Http\Controllers\ModulHController::class, 'pusatPendidikan'])->name('modulh@pusatpendidikan');
+Route::get('/modul_h/aksesliputan', [App\Http\Controllers\ModulHController::class, 'aksesLiputan'])->name('modulh@aksesliputan');
+Route::get('/modul_h/masyarakat', [App\Http\Controllers\ModulHController::class, 'kemudahanMasyarakat'])->name('modulh@masyarakat');
+Route::get('/modul_h/pusatjagaan', [App\Http\Controllers\ModulHController::class, 'pusatJagaan'])->name('modulh@pusatjagaan');
+Route::get('/modul_h/sampah', [App\Http\Controllers\ModulHController::class, 'sampah'])->name('modulh@sampah');
+Route::get('/modul_h/penangkutanawam', [App\Http\Controllers\ModulHController::class, 'penangkutanAwam'])->name('modulh@penangkutanawam');
+
 
 // this route can return the state with the state id
 Route::get('daerahbyidnegeri/{id}', [App\Http\Controllers\KampungController::class, 'daerahbyidnegeri']);

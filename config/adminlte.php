@@ -354,11 +354,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Rumah',
-                    'url'  => '#',
+                    'url'  => '/modul_g/rumah',
                 ],
                 [
                     'text' => 'Kenderaan',
-                    'url'  => '#',
+                    'url'  => '/modul_g/kenderaan',
                 ],
             ],
         ],
@@ -368,43 +368,43 @@ return [
             'submenu' => [
                 [
                     'text' => 'Infrastruktur',
-                    'url'  => '#',
+                    'url'  => '/modul_h/infrastruktur',
                 ],
                 [
                     'text' => 'Bekalan Air',
-                    'url'  => '#',
+                    'url'  => '/modul_h/air',
                 ],
                 [
                     'text' => 'Bekalan Elektrik',
-                    'url'  => '#',
+                    'url'  => '/modul_h/elektrik',
                 ],
                 [
                     'text' => 'Sistem Pembentungan',
-                    'url'  => '#',
+                    'url'  => '/modul_h/pembentungan',
                 ],
                 [
                     'text' => 'Pusat Pendidikan',
-                    'url'  => '#',
+                    'url'  => '/modul_h/pusatpendidikan',
                 ],
                 [
                     'text' => 'Capaian / Akses Liputan',
-                    'url'  => '#',
+                    'url'  => '/modul_h/aksesliputan',
                 ],
                 [
                     'text' => 'Kemudahan Masyarakat',
-                    'url'  => '#',
+                    'url'  => '/modul_h/masyarakat',
                 ],
                 [
                     'text' => 'Rumah / Pusat Jagaan',
-                    'url'  => '#',
+                    'url'  => '/modul_h/pusatjagaan',
                 ],
                 [
-                    'text' => 'Sampah',
-                    'url'  => '#',
+                    'text' => 'Kutipan Sampah',
+                    'url'  => '/modul_h/sampah',
                 ],
                 [
                     'text' => 'Pengangkutan Awam',
-                    'url'  => '#',
+                    'url'  => '/modul_h/pengangkutanawam',
                 ],
             ],
         ],
